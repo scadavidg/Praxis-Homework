@@ -18,4 +18,3 @@ export class UsersService {
         return await this.userModel.find().exec();
     }
 }
- 
