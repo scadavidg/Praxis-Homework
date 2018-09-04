@@ -4,7 +4,6 @@ import {User} from './interfaces/user.interface';
 import { Model } from 'mongoose';
 import {CreateUserDto} from './dto/create-user.dto'
 
-
 @Injectable()
 export class UsersService {
     constructor(@InjectModel('User') private readonly userModel: Model<User>){}
@@ -18,7 +17,19 @@ export class UsersService {
         return await this.userModel.find().exec();
     }
 
-    async getUserById(id:string){
+    async find(id:string){
         return await this.userModel.findById(id).exec();
     } 
+
+    /*
+
+    async createNote(id: string, createNoteDto:CreateNoteDto){
+        const note = {text: createNoteDto.text, createDate: Date.now(), updateDate: Date.now()}
+        return await this.userModel.update({_id: id}, {$push: { notes: note}})
+
+    }
+
+    async findNotes(id:string){
+        return await this.userModel.findById(id).select('notes').exec();
+    } */
 }
