@@ -21,4 +21,9 @@ export class NotesService {
     async find(id:string){
         return await this.noteModel.findById(id).exec();
     } 
+
+    async delete(id:string){
+        return await this.noteModel.findByIdAndRemove(id);
+    } 
+    
 }

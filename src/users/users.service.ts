@@ -21,6 +21,10 @@ export class UsersService {
         return await this.userModel.findById(id).exec();
     } 
 
+    async delete(id:string){
+        return await this.userModel.findByIdAndRemove(id);
+    } 
+
     /*
 
     async createNote(id: string, createNoteDto:CreateNoteDto){
