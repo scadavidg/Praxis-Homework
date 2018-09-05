@@ -25,15 +25,8 @@ export class UsersService {
         return await this.userModel.findByIdAndRemove(id);
     } 
 
-    /*
+    async update(id:string, params:object){
+        return await this.userModel.findByIdAndUpdate(id,params,{new: true})
+     }
 
-    async createNote(id: string, createNoteDto:CreateNoteDto){
-        const note = {text: createNoteDto.text, createDate: Date.now(), updateDate: Date.now()}
-        return await this.userModel.update({_id: id}, {$push: { notes: note}})
-
-    }
-
-    async findNotes(id:string){
-        return await this.userModel.findById(id).select('notes').exec();
-    } */
 }
