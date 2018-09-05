@@ -25,5 +25,9 @@ export class NotesService {
     async delete(id:string){
         return await this.noteModel.findByIdAndRemove(id);
     } 
+
+    async update(id:string, params:object){
+       return await this.noteModel.findByIdAndUpdate(id,params,{new: true})
+    }
     
 }
