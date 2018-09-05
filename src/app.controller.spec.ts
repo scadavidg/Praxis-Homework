@@ -13,7 +13,7 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
+    it('should return Im ok"', () => {
       const appController = app.get<AppController>(AppController);
       expect(appController.root()).toEqual({ message: "I'm ok" });
     });
