@@ -18,6 +18,7 @@ describe('UsersService', () => {
   });
   describe('findAll', () => {
     it('should return an array of users', async () => {
+
       const result = ['test'];
 
       jest.spyOn(service, 'findAll').mockImplementation(() => result);
@@ -27,11 +28,15 @@ describe('UsersService', () => {
   });
   describe('create', () => {
     it('should return an create callback', async () => {
-      const result = ['test'];
+      let newUser = {
+        "username" : "test1",
+        "name" :"test1",
+        "notas" : ["4.5","4.8"]
+      };
 
-      jest.spyOn(service, 'create').mockImplementation(() => result);
+      jest.spyOn(service, 'create').mockImplementation(() =>  newUser );
 
-      expect(await service.create(user)).toBe(result);
+      expect(await service.create(newUser)).toBe(newUser);
     });
   });
 });
