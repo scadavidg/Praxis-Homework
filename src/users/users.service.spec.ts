@@ -18,12 +18,10 @@ describe('UsersService', () => {
   });
   describe('findAll', () => {
     it('should return an array of users', async () => {
+      
+      jest.spyOn(service, 'findAll').mockImplementation(() =>[ CreateUserDto]);
 
-      const result = ['test'];
-
-      jest.spyOn(service, 'findAll').mockImplementation(() => result);
-
-      expect(await service.findAll()).toBe(result);
+      expect(await service.findAll()).toEqual([CreateUserDto]);
     });
   });
   describe('create', () => {
@@ -33,10 +31,42 @@ describe('UsersService', () => {
         "name" :"test1",
         "notas" : ["4.5","4.8"]
       };
-
       jest.spyOn(service, 'create').mockImplementation(() =>  newUser );
 
       expect(await service.create(newUser)).toBe(newUser);
     });
   });
+
+  describe('find', () => {
+    it('should return an specific user', async () => {
+      const id="teste1";
+      const result = { status: 200, description: 'Successful response'};
+      
+      jest.spyOn(service, 'find').mockImplementation(() =>Object);
+
+      expect(await service.find(id)).toBe(Object);
+    });
+  });
+
+  describe('delete', () => {
+    it('should  return an deleted user', async () => {
+      const id="teste1";
+      const result={ status: 200, description: 'successfully deleted'};
+      jest.spyOn(service, 'delete').mockImplementation(() =>result);
+
+      expect(await service.delete(id)).toEqual(result);
+    });
+  });
+  describe('update', () => {
+    it('should  return an updated user', async () => {
+      const id="teste1";
+      const result=user;
+
+
+      jest.spyOn(service, 'update').mockImplementation(() =>result);
+
+      expect(await service.update(id,user)).toBe(result);
+    });
+  });
+  
 });
