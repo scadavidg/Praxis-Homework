@@ -4,6 +4,9 @@
 
 Homework for praxis
 
+## Team
+Santiago Cadavid Gutierrez
+Jerson David Mendoza 
 ## Installation
 
 ```bash
