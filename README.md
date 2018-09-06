@@ -6,7 +6,7 @@ Homework for praxis
 
 ## Team
 Santiago Cadavid Gutierrez
-Jerson David Mendoza 
+-Jerson David Mendoza 
 ## Installation
 
 ```bash
@@ -29,6 +29,7 @@ npm run start:prod
 ## Test
 
 ```bash
+# find the coverage test in this url: https://scadavidg.github.io/
 # unit tests
 $ npm run test
 
