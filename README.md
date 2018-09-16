@@ -25,11 +25,14 @@ $ npm run start:dev
 # production mode
 npm run start:prod
 ```
+## swagger: https://infinite-badlands-80490.herokuapp.com/api/docs
+## find the coverage test in this url: https://scadavidg.github.io/
+
 
 ## Test
 
 ```bash
-# find the coverage test in this url: https://scadavidg.github.io/
+
 # unit tests
 $ npm run test
 
